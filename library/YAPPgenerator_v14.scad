@@ -1106,24 +1106,24 @@ module cutoutsInXY(type)
           if (conn[5]==yappAllCorners)
           {
             //echo("Alle corners hole!");
-            translate([pcbX + pcbLength-conn[0], pcbY + conn[1], (basePlaneThickness-1)*-1])
+            translate([pcbX + pcbLength-conn[0], pcbY + conn[1], (basePlaneThickness)*-1])
             { 
-              linear_extrude(basePlaneThickness+3)
+              linear_extrude((basePlaneThickness*2)+1)
                 circle(
                   d = conn[2]*2.2,
                   $fn = 20);
             }
-            translate([pcbX + pcbLength-conn[0], pcbY + pcbWidth-conn[1], (basePlaneThickness-1)*-1])
+            translate([pcbX + pcbLength-conn[0], pcbY + pcbWidth-conn[1], (basePlaneThickness)*-1])
             { 
-              linear_extrude(basePlaneThickness+3)
+              linear_extrude((basePlaneThickness*2)+1)
                 circle(
                   d = conn[2]*2.2,
                   $fn = 20);
             }
-            translate([pcbX + conn[0], pcbY + pcbWidth-conn[1], (basePlaneThickness-1)*-1])
+            translate([pcbX + conn[0], pcbY + pcbWidth-conn[1], (basePlaneThickness)*-1])
             { 
               color("green")
-              linear_extrude(basePlaneThickness+3)
+              linear_extrude((basePlaneThickness*2)+1)
                 circle(
                   d = conn[2]*2.2,
                   $fn = 20);
